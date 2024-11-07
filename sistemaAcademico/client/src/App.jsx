@@ -4,6 +4,9 @@ import { AlumnosFormPage } from "./pages/AlumnosFormPage";
 import { MateriasPage } from "./pages/MateriasPage";
 import { MateriasFormPage } from "./pages/MateriasFormPage";
 import { Navigation } from "./components/Navigation";
+import { MatriculacionPage } from "./pages/MatriculacionPage";
+import { MatriculacionFormPage } from "./pages/MatriculacionFormPage";
+
 
 
 function App() {
@@ -15,8 +18,11 @@ function App() {
         <Route path="/" element={<Navigate to="/alumnos" />}/>
         <Route path="/alumnos" element={<AlumnosPage />}/>
         <Route path="/alumnos-create" element={< AlumnosFormPage/>}/>
+        <Route path="/alumnos/:id" element={< AlumnosFormPage/>}/>
         <Route path="/materias" element={<MateriasPage/>}/>
         <Route path="/materias-create" element={< MateriasFormPage/>}/>
+        <Route path= "/matriculaciones" element={<MatriculacionPage/>}/>
+        <Route path="/matriculaciones-create" element={<MatriculacionFormPage/>}/>
       </Routes>
     </BrowserRouter>
   )
