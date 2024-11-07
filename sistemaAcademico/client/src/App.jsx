@@ -21,8 +21,10 @@ function App() {
         <Route path="/alumnos/:id" element={< AlumnosFormPage/>}/>
         <Route path="/materias" element={<MateriasPage/>}/>
         <Route path="/materias-create" element={< MateriasFormPage/>}/>
+        <Route path="/materias/:id" element={< MateriasFormPage/>}/>
         <Route path= "/matriculaciones" element={<MatriculacionPage/>}/>
         <Route path="/matriculaciones-create" element={<MatriculacionFormPage/>}/>
+        <Route path="/matriculaciones/:id" element={<MatriculacionFormPage/>}/>
       </Routes>
     </BrowserRouter>
   )
