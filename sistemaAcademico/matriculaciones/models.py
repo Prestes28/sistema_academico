@@ -1,6 +1,7 @@
 from django.db import models
 from materias.models import materia
 from alumnos.models import alumno
+from django.core.exceptions import ValidationError
 
 # Create your models here.
 class matriculacion(models.Model):
@@ -13,7 +14,7 @@ class matriculacion(models.Model):
         if self.materia.matriculaciones.count() < self.materia.cuposLibres:
             super().save(*args,**kwargs)
         else:
-            raise ValueError("No hay cupo disponible para esta materia")
+            raise ValidationError("No hay cupo disponible para esta materia")
      
 class Meta:
   unique_together = ("alumno","materia")
