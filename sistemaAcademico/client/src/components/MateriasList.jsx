@@ -14,7 +14,7 @@ export function MateriasList() {
     },[]);
     
     return(
-        <div>
+        <div className="grid grid-cols-3 gap-3 ">
             {materias.map((materia) => (
               <MateriaCard key={materia.id} materia={materia} />
             ))}

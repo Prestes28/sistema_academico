@@ -14,7 +14,7 @@ export function AlumnosList() {
     },[]);
     
     return(
-        <div>
+        <div className="grid grid-cols-3 gap-3 ">
             {alumnos.map((alumno) => (
               <AlumnoCard key={alumno.id} alumno={alumno} />
             ))}

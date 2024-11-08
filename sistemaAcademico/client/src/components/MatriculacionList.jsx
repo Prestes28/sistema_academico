@@ -14,7 +14,7 @@ export function MatriculacionList() {
     },[]);
     
     return(
-        <div>
+        <div  className="grid grid-cols-3 gap-3 ">
 
             {matriculaciones.map((matriculacion) => (
               <MatriculacionCard key={matriculacion.id} matriculacion={matriculacion} />

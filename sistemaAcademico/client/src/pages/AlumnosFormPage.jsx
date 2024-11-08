@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import {useForm} from 'react-hook-form';
 import { createAlumno, deleteAlumno, updateAlumno, getAlumno } from '../api/Alumnos.api';
 import {useNavigate, useParams} from 'react-router-dom'
+import {toast} from 'react-hot-toast'
 export function AlumnosFormPage() {
 
     const {register, 
@@ -18,8 +19,10 @@ export function AlumnosFormPage() {
         if (params.id) {
             console.log("Actualizando");
             await updateAlumno(params.id, data)
+            toast.success('Alumno Actualizado con exito')
         } else {
             await createAlumno(data)
+            toast.success('Alumno registrado con exito')
         }
         navigate('/alumnos');
     })
@@ -36,24 +39,28 @@ export function AlumnosFormPage() {
         loadAlumno();
     })
     return (
-        <div>
+        <div className="max-w-90 mx-auto justify-center">
             <form onSubmit={onSubmit}>
-                <input type="text" placeholder="Nombre" {...register("nombre",{required:true})}/>
+                <label className="font-bold text-3x1 mb- mx-3">Nombre:</label>
+                <input className='bg-zinc-700 p-3 rounded- block w-full mb-3' type="text" placeholder="Nombre" {...register("nombre",{required:true})}/>
                 {errors.nombre && <span>Este campo es requerido</span>}
-                <input type="text" placeholder="Apellido" {...register("apellido",{required:true})}/>
+                <label className="font-bold text-3x1 mb- mx-3">Apellido:</label>
+                <input  className='bg-zinc-700 p-3 rounded- block w-full mb-3' type="text" placeholder="Apellido" {...register("apellido",{required:true})}/>
                 {errors.apellido && <span>Este campo es requerido</span>}
-                <input type="date" placeholder="Fecha de Nacimiento" {...register("fecha_nac")} />
-                <button>Save</button>
+                <label className="font-bold text-3x1 mb- mx-3">Fecha de nacimiento:</label>
+                <input className='bg-zinc-700 p-3 rounded- block w-full mb-3' type="date" placeholder="Fecha de Nacimiento" {...register("fecha_nac")} />
+                <button className='bg-indigo-500 p-3 rounded-lg block mt-3 w-full'>Save</button>
 
             </form>
 
             {
                 params.id && (
-                    <button onClick={() => {
+                    <button className='bg-red-500 p-3 mt-3 rounded-md' onClick={() => {
 
                        const acented = window.confirm('Estas seguro?')
                        if (acented) {
                         deleteAlumno(params.id)
+                        toast.success('Alumno eliminado con exito')
                         navigate('/alumnos')
                        }
                     }}>Delete</button>
