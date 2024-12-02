@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "alumnos",
     "materias",
     "matriculaciones",
+    "tabla",
     "rest_framework",
     "corsheaders"
 ]
