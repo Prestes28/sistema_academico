@@ -104,7 +104,7 @@ export function MatriculacionFormPage() {
              toast.success('Matriculacion eliminada con exito')
              navigate('/matriculaciones')
             }
-         }}>Delete</button>
+         }}>Borrar</button>
         )
        }
     </div>

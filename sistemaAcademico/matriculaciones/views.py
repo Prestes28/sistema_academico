@@ -37,3 +37,14 @@ class MatriculacionCreateView(APIView):
 #         return JsonResponse({"mensaje": "Inscripción exitosa"})
 #     except ValueError as e:
 #         return JsonResponse({"error": str(e)}, status=400)
+
+class MatriculacionDetail(APIView):
+    def get(self, request):
+        alumno_id = request.query_params.get('alumno')
+        materia_id = request.query_params.get('materia')
+
+        try:
+            matriculacion = matriculacion.objects.get(alumno_id=alumno_id, materia_id=materia_id)
+            return Response({"id": matriculacion.id}, status=status.HTTP_200_OK)
+        except matriculacion.DoesNotExist:
+            return Response({"error": "Matricula no encontrada"}, status=status.HTTP_404_NOT_FOUND)

@@ -5,6 +5,7 @@ export function Navigation() {
     return (
         <div>
             <div className="flex justify-center py-3 ">
+                <Link to="/tabla"><h1 className="font-bold text-3x1 mb- mx-3">Tabla</h1></Link>
                 <Link to="/alumnos"><h1 className="font-bold text-3x1 mb- mx-3">Alumnos</h1></Link>
                 <Link to= "/materias"><h1 className="font-bold text-3x1 mb- mx-3">Materias</h1></Link>
                 <Link to="/matriculaciones"><h1 className="font-bold text-3x1 mb- mx-3">Matriculaciones</h1></Link>

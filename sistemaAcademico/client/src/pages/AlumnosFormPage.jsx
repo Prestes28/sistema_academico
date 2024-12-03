@@ -49,7 +49,7 @@ export function AlumnosFormPage() {
                 {errors.apellido && <span>Este campo es requerido</span>}
                 <label className="font-bold text-3x1 mb- mx-3">Fecha de nacimiento:</label>
                 <input className='bg-zinc-700 p-3 rounded- block w-full mb-3' type="date" placeholder="Fecha de Nacimiento" {...register("fecha_nac")} />
-                <button className='bg-indigo-500 p-3 rounded-lg block mt-3 w-full'>Save</button>
+                <button className='bg-indigo-500 p-3 rounded-lg block mt-3 w-full'>Guardar</button>
 
             </form>
 
@@ -63,7 +63,7 @@ export function AlumnosFormPage() {
                         toast.success('Alumno eliminado con exito')
                         navigate('/alumnos')
                        }
-                    }}>Delete</button>
+                    }}>Borrar</button>
                 )
             }
 

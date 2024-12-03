@@ -48,7 +48,7 @@ export function MateriasFormPage() {
                 <label className="font-bold text-3x1 mb- mx-3">Cupos Totales: </label>
                 <input  className='bg-zinc-700 p-3 rounded- block w-full mb-3' type="number"placeholder="Cupos Totales" {...register("cuposLibres",{required:true})}/>
                 {errors.cuposLibres && <span>Este campo es obligatorio</span>}
-                <button className='bg-indigo-500 p-3 rounded-lg block mt-3 w-full'>Save</button>
+                <button className='bg-indigo-500 p-3 rounded-lg block mt-3 w-full'>Guardar</button>
             </form>
             {
                 params.id && (
@@ -59,7 +59,7 @@ export function MateriasFormPage() {
                             toast.success('Materia eliminada con exito')
                             navigate('/materias')
                         }
-                    }}>Delete</button>
+                    }}>Borrar</button>
                 )
             }
         </div>
