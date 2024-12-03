@@ -1,10 +1,12 @@
 import axios from 'axios'
+import API from "./axios"
+
 export const getAllMaterias = () =>{
-   return axios.get('http://localhost:8000/materias/api/v1/materia/')
+   return API.get('/materias/api/v1/materia/')
 }
 
 export const getMateria = (id) =>{
-   return axios.get("http://localhost:8000/materias/api/v1/materia/"+ id + "/")
+   return API.get("/materias/api/v1/materia/"+ id + "/")
 }
 
 export const createMateria = (materia) =>{

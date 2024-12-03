@@ -1,11 +1,11 @@
 import axios from 'axios'
-
+import API from "./axios"
 export const getAllAlumnos = () =>{
-   return axios.get('http://localhost:8000/alumnos/api/v1/alumno/')
+   return API.get('/alumnos/api/v1/alumno/')
 }
 
 export const getAlumno = (id) =>{
-   return axios.get("http://localhost:8000/alumnos/api/v1/alumno/"+ id + "/")
+   return API.get("/alumnos/api/v1/alumno/"+ id + "/")
 }
 
 export const createAlumno = (alumno) =>{

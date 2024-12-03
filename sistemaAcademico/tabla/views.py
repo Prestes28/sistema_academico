@@ -4,14 +4,11 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from alumnos.models import alumno
-from materias.models import materia
 from matriculaciones.models import matriculacion
-from alumnos.serializer import AlumnoSerializer
-from materias.serializer import MateriaSerializer
-from matriculaciones.serializer import MatriculacionSerializer
+from rest_framework.permissions import IsAuthenticated
 
 class ConsolidatedDataView(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self, request):
         matriculaciones = matriculacion.objects.select_related('alumno', 'materia').all()
         data = [

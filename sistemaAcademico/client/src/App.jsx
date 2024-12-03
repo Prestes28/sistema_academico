@@ -8,6 +8,8 @@ import { MatriculacionPage } from "./pages/MatriculacionPage";
 import { MatriculacionFormPage } from "./pages/MatriculacionFormPage";
 import { Toaster } from "react-hot-toast";
 import Dashboard from "./pages/Dashboard";
+import Register from "./pages/UsuariosRegistroFormPage";
+import Login from "./pages/UsuariosFormPage";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route path="/materias/:id" element={<MateriasFormPage />} />
           <Route path="/matriculaciones" element={<MatriculacionPage />} />
           <Route path= "/tabla" element={<Dashboard />}/>
+          <Route path= "/registro" element={<Register/>}/>
+          <Route path= "/login" element={<Login/>}/>
           <Route
             path="/matriculaciones-create"
             element={<MatriculacionFormPage />}

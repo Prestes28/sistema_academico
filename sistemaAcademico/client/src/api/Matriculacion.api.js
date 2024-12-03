@@ -1,10 +1,12 @@
 import axios from 'axios'
+import API from "./axios"
+
 export const getAllMatriculaciones = () =>{
-   return axios.get('http://localhost:8000/inscripciones/inscribir/matriculacion/')
+   return API.get('/inscripciones/inscribir/matriculacion/')
 }
 
 export const getMatriculacion = (id) =>{
-   return axios.get("http://localhost:8000/inscripciones/inscribir/matriculacion/"+ id + "/")
+   return API.get("/inscripciones/inscribir/matriculacion/"+ id + "/")
 }
 
 export const createMatriculacion = (matriculacion) =>{

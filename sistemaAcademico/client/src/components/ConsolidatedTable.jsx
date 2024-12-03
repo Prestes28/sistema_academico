@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Table, Button, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { unparse } from "papaparse";
+import API from "../api/axios";
 
 
 const ConsolidatedTable = () => {
@@ -11,7 +12,7 @@ const ConsolidatedTable = () => {
     const navigate = useNavigate(); 
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/tabla/api/consolidated-data/')
+        API.get('/tabla/api/consolidated-data/')
             .then((response) => {
                 setData(response.data);
                 setLoading(false);

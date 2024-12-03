@@ -9,10 +9,11 @@ from rest_framework import viewsets , status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .serializer import MatriculacionSerializer
-
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 class MatriculacionView(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class= MatriculacionSerializer
     queryset = matriculacion.objects.all()
 
