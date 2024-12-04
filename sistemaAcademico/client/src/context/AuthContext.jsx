@@ -25,7 +25,8 @@ export const AuthProvider = ({ children }) => {
         const token = localStorage.getItem('token');
         if (token) {
             // Aquí podrías validar el token con el backend si es necesario
-            setUser({ token }); // Asigna el token al estado del usuario
+            // Por ejemplo, realizar una llamada a la API para verificar la validez del token
+            setUser({ token }); // Asigna el token al estado del usuario (en un caso real, debes obtener los datos del usuario)
         }
         setLoading(false); // Termina la carga inicial
     }, []);

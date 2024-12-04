@@ -10,13 +10,13 @@ export const getMatriculacion = (id) =>{
 }
 
 export const createMatriculacion = (matriculacion) =>{
-   return axios.post("http://localhost:8000/inscripciones/inscribir/matriculacion/", matriculacion)
+   return API.post("/inscripciones/inscribir/matriculacion/", matriculacion)
 }
 
 export const deleteMatriculacion = (id) =>{
-   return axios.delete("http://localhost:8000/inscripciones/inscribir/matriculacion/"+ id + "/")
+   return API.delete("/inscripciones/inscribir/matriculacion/"+ id + "/")
 }
 
 export const updateMatriculacion = (id, matriculacion) =>{
-   return axios.put("http://localhost:8000/inscripciones/inscribir/matriculacion/"+ id + "/", matriculacion)
+   return API.put("http://localhost:8000/inscripciones/inscribir/matriculacion/"+ id + "/", matriculacion)
 }

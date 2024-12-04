@@ -51,7 +51,7 @@ const ConsolidatedTable = () => {
 
     // Función para manejar el clic en una fila y buscar el matriculacionId
     const handleRowClick = (alumnoId, materiaId) => {
-        axios.get(`http://127.0.0.1:8000/inscripciones/inscribir/matriculacion/?alumno=${alumnoId}&materia=${materiaId}`)
+        API.get(`/inscripciones/inscribir/matriculacion/?alumno=${alumnoId}&materia=${materiaId}`)
             .then((response) => {
                 // Imprimir la respuesta para depurar
                 console.log("Respuesta completa de la API:", response.data);  // Es un array de objetos
@@ -75,16 +75,16 @@ const ConsolidatedTable = () => {
 
     return (
         <div>
-        <Button variant="contained" color="primary" onClick={exportToCSV}>Exportar CSV</Button>
+        <Button style={{ margin: '20px' }} variant="contained" color="primary" onClick={exportToCSV}>Exportar CSV</Button>
         <TableContainer component={Paper}>
             <Table>
                 <TableHead>
                     <TableRow>
-                        <TableCell>Alumno</TableCell>
-                        <TableCell>Apellido</TableCell>
-                        <TableCell>Materia</TableCell>
-                        <TableCell>Cupo</TableCell>
-                        <TableCell>Fecha de Inscripción</TableCell>
+                        <TableCell><p className='block text-black  font-semibold mb-2'>Nombre</p></TableCell>
+                        <TableCell><p className='block text-black  font-semibold mb-2'>Apellido</p></TableCell>
+                        <TableCell><p className='block text-black  font-semibold mb-2'>Materia</p></TableCell>
+                        <TableCell><p className='block text-black  font-semibold mb-2'>Cupo</p></TableCell>
+                        <TableCell><p className='block text-black  font-semibold mb-2'>Fecha de Inscripción</p></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
