@@ -10,6 +10,7 @@ import { Toaster } from "react-hot-toast";
 import Dashboard from "./pages/Dashboard";
 import Register from "./pages/UsuariosRegistroFormPage";
 import Login from "./pages/UsuariosFormPage";
+import {ProgramaForm} from "./pages/ProgramasFormPage";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path= "/tabla" element={<Dashboard />}/>
           <Route path= "/registro" element={<Register/>}/>
           <Route path= "/login" element={<Login/>}/>
+          <Route path="programas" element={<ProgramaForm/>}/>
           <Route
             path="/matriculaciones-create"
             element={<MatriculacionFormPage />}

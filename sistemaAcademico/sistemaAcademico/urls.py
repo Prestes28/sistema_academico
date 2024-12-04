@@ -25,6 +25,7 @@ urlpatterns = [
     path("materias/",include("materias.urls")),
     path('inscripciones/', include('matriculaciones.urls')),
     path('tabla/',include('tabla.urls')),
+    path("programas/", include("programas.urls")),
     path('api/token-auth/', obtain_auth_token, name='token_auth'),
     path("registro/",RegisterView.as_view(), name="registro"),
 
